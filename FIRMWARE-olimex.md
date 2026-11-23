@@ -1,15 +1,22 @@
-# FRANK-386 Olimex RP2350PC — Firmware v1.08-olimex
+# FRANK-386 Olimex RP2350PC — Firmware v1.08-olimex-v2
 
 Firmware HW-validat pentru placa **Olimex RP2350PC (Rev.A1)**: bootează
 **SeaBIOS → DR-DOS 8.1** de pe disketa `fdd0.img`, tastatură USB funcțională.
 
+## Ce e nou în v2 (față de v1.08-olimex)
+
+- **Boot splash nou**: „OLIMEX RP2350PC" + `v1.08 - built <dată build>` afișate
+  pe ecranul de bun venit (ramura PC).
+- Consolă debug **UART GP0 @ 115200** activată (`DEBUG_ENABLED`) în build-ul
+  publicat — vezi mesajele de boot pe pinul GP0.
+
 ## Fișier
 
-`frank-386-olimex.uf2` = `PCp2-386-378MHz-P133-v1.08.uf2` (build-pc-3:
-consolă UART + rework HDMI)
+`frank-386-olimex-v2.uf2` = `PCp2-386-378MHz-P133-v1.08.uf2` (build-pc-3:
+consolă UART + rework HDMI + splash v2)
 
 SHA-256:
-`fb2a94c464247a115db6b5635d9a798d191025acc36324101cf8e5517bbce019`
+`29a61410e75f8b951812fb26f8f9ec962bd9f5357547b8c3186dbdad502e556d`
 
 ## Config placă
 
@@ -26,13 +33,25 @@ SHA-256:
 
 - `fdd0.img` (DR-DOS 8.1) — **NU inclus** (© comercial): descarcă din
   [rh1tech/frank-386](https://github.com/rh1tech/frank-386) (folder `386/`)
+- imaginile de diskette Windows 3.0 — **NU incluse** (© comercial)
 - `config.ini` din acest repo — **378/133** (NU 504, nevalidat pe placă)
 
 ## Flash
 
-BOOT1 + RESET → **RPI-RP2** → copiază `frank-386-olimex.uf2`.
+BOOT1 + RESET → **RPI-RP2** → copiază `frank-386-olimex-v2.uf2`.
 
 ## Controale
 
 - **Win+F11** — settings
 - **Win+F12** — disk manager
+
+## Credits
+
+- Cod sursă & portare: [rh1tech/frank-386](https://github.com/rh1tech/frank-386)
+  (Matveev) & DnCraptor; suport Olimex RP2350PC (ramura PC)
+- Tiny386 de Chunhui He (BSD)
+- xrip (MIT)
+- QEMU (BIOS VGA)
+- MAME fmopl (LGPL)
+- SeaBIOS (LGPL)
+- FatFs (BSD)
