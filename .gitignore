@@ -1,0 +1,25 @@
+*~
+*.o
+*.a
+*.elf
+*.hex
+*.uf2
+*.dis
+*.map
+*.dSYM/
+.depends
+.claude/
+build/
+bin/
+.DS_Store
+tiny386
+tiny386_nosdl
+tiny386_kvm
+wifikbd
+initnet
+release
+.vscode/
+
+# DR-DOS 8.1 floppy image — commercial license, never publish
+386/fdd0.img
+*.img
