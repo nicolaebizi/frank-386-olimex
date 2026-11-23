@@ -1505,7 +1505,10 @@ static void show_welcome_screen(void) {
 #elif defined(BOARD_M2)
     osd_print_center(wy + 10, "Platform: M2", OSD_ATTR(OSD_LIGHTGREEN, OSD_BLUE));
 #elif defined(BOARD_PC)
-    osd_print_center(wy + 10, "Platform: Olimex PICO-PC", OSD_ATTR(OSD_LIGHTGREEN, OSD_BLUE));
+    osd_print_center(wy + 10, "OLIMEX RP2350PC", OSD_ATTR(OSD_LIGHTGREEN, OSD_BLUE));
+    snprintf(hw_str, sizeof(hw_str), "v%d.%02d - built " __DATE__,
+             FRANK_386_VERSION_MAJOR, FRANK_386_VERSION_MINOR);
+    osd_print_center(wy + 11, hw_str, OSD_ATTR(OSD_LIGHTCYAN, OSD_BLUE));
 #elif defined(BOARD_Z2)
     osd_print_center(wy + 10, "Platform: RP2350-PiZero", OSD_ATTR(OSD_LIGHTGREEN, OSD_BLUE));
 #elif defined(BOARD_C2)

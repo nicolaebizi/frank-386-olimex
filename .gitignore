@@ -23,3 +23,6 @@ release
 # DR-DOS 8.1 floppy image — commercial license, never publish
 386/fdd0.img
 *.img
+
+# Windows 3.0 disk images — commercial license, never publish
+386/win30-144.zip
